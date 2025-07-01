@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Lucas Le Pouliquen</title>
+    <style>
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.4;
+            font-size: 11pt;
+        }
+        
+        .header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2E75B6;
+            padding-bottom: 20px;
+        }
+        
+        .header-content {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .header-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 20px;
+            flex-shrink: 0;
+        }
+        
+        .header-content h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 0;
+            color: #000;
+        }
+        
+        .header-content h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #000;
+        }
+        
+        .header-content p {
+            margin: 2px 0;
+            font-size: 11pt;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2E75B6;
+            border-bottom: 1px solid #2E75B6;
+            margin: 20px 0 10px 0;
+            padding-bottom: 2px;
+        }
+        
+        .formation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        .formation-table td {
+            padding: 3px 8px;
+            vertical-align: top;
+        }
+        
+        .formation-table .year {
+            font-weight: bold;
+            width: 80px;
+        }
+        
+        .competences-section {
+            margin-bottom: 15px;
+        }
+        
+        .competences-section strong {
+            font-weight: bold;
+        }
+        
+        .competences-section p {
+            margin: 5px 0;
+        }
+        
+        .autres-competences ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        
+        .autres-competences li {
+            margin: 3px 0;
+        }
+        
+        .experience {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .experience h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 0;
+            color: #000;
+        }
+        
+        .experience-date {
+            font-size: 11pt;
+            color: #000;
+        }
+        
+        .experience h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 2px 0;
+            color: #000;
+        }
+        
+        .context {
+            font-weight: bold;
+            margin: 8px 0 5px 0;
+        }
+        
+        .realisations {
+            font-weight: bold;
+            margin: 8px 0 5px 0;
+        }
+        
+        .experience ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        
+        .experience li {
+            margin: 3px 0;
+        }
+        
+        .sub-list {
+            padding-left: 15px;
+        }
+        
+        .environment {
+            font-weight: bold;
+            margin: 8px 0 5px 0;
+        }
+        
+        .environment-text {
+            font-weight: normal;
+        }
+        
+        .highlight {
+            font-weight: bold;
+        }
+        
+        .projet-section {
+            margin-bottom: 15px;
+        }
+        
+        .projet-title {
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+        }
+        
+        .projet-subtitle {
+            font-weight: bold;
+            margin: 8px 0 3px 0;
+        }
+        
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Lucas Le Pouliquen</h1>
+            <h2>Fullstack developer C# Angular / Devops Engineer</h2>
+            <p>4 ans d'expérience</p>
+            <p>Permis frontalier Suisse</p>
+        </div>
+        <img src="photo_lucas.png" class="header-photo" alt="Photo de Lucas Le Pouliquen">
+    </div>
+
+    <div class="section-title">FORMATION</div>
+    <table class="formation-table">
+        <tr>
+            <td class="year">2020</td>
+            <td>Formation d'ingénieur généraliste. Option mécanique avancée des structures</td>
+        </tr>
+        <tr>
+            <td class="year">2020</td>
+            <td>Master en ingénierie mécanique spécialisé en recherche et innovation</td>
+        </tr>
+        <tr>
+            <td class="year">2015</td>
+            <td>Baccalauréat S option physique section européenne espagnol mention très bien</td>
+        </tr>
+    </table>
+
+    <div class="section-title">COMPÉTENCES TECHNIQUES</div>
+    <div class="competences-section">
+        <p><strong>Programming Languages :</strong> C#, JavaScript</p>
+        <p><strong>Scripting Languages :</strong> PowerShell, Shell</p>
+        <p><strong>Architecture logicielle :</strong> Clean Architecture, Architecture hexagonale, Architecture microservices, patterns SOLID</p>
+        <p><strong>Frameworks :</strong> ASP .NET Core, .NET MVC, .NET Framework, DevBooster, Angular, HTML, CSS</p>
+        <p><strong>Infrastructure / DevOps :</strong> Déploiement microservices containerisés (Docker, Kubernetes AKS/OpenShift), pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions), cloud Azure/AWS, authentification Azure AD, automatisation PowerShell/Shell, monitoring Dynatrace, gestion artefacts Artifactory, migration d'infrastructures</p>
+        <p><strong>BDD :</strong> PostgreSQL, MSSQL, SQL – PLSQL</p>
+        <p><strong>Méthodologie :</strong> Agile Scrum, Cycle en V</p>
+        <p><strong>Outils :</strong> Cursor, Visual Studio, Visual Studio Code, GitHub, SonarCloud, Jira, Postman, Netbeans</p>
+    </div>
+
+    <div class="section-title">AUTRES COMPÉTENCES</div>
+    <div class="autres-competences">
+        <ul>
+            <li>Travail d'équipe agile avec l'utilisation de GitLab, GitHub, Jira, Confluence, GitFlow, Azure DevOps</li>
+            <li>Création du backend et des API</li>
+            <li>Mise en place de la CI/CD</li>
+            <li>Développement de sites web</li>
+            <li>Administration de bases de données</li>
+            <li>Esprit d'initiative / Force de proposition</li>
+            <li>Communication en anglais et en français</li>
+        </ul>
+    </div>
+
+    <div class="section-title">LANGUES</div>
+    <p><strong>Anglais :</strong> Courant certification Bulats (C1)<br>
+    <strong>Français :</strong> Maternel</p>
+
+    <div class="section-title" style="page-break-before: always;">EXPÉRIENCE PROFESSIONNELLE</div>
+
+    <div class="experience">
+        <div class="experience-header">
+            <h3>Qim Info</h3>
+            <span class="experience-date">2025-05 à 2025-06</span>
+        </div>
+        <h4>DevOps Engineer / Fullstack developer</h4>
+        
+        <div class="context">Contexte Projet :</div>
+        <p>Développement informatique dans le cadre de la restructuration de la DSI</p>
+        
+        <div class="realisations">Réalisations :</div>
+        <ul>
+            <li>Développement sur le logiciel de la gestion des temps de l'entreprise (QimTime) :
+                <ul class="sub-list">
+                    <li>Développement de fonctionnalité Front-end avec Angular</li>
+                    <li>Implémentation et amélioration des tests unitaires</li>
+                </ul>
+            </li>
+            <li>Migration infrastructure cloud vers Azure :
+                <ul class="sub-list">
+                    <li>Participation à la migration d'une solution multi-provider vers Azure</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="environment">Environnement Technique :</div>
+        <span class="environment-text">Agile Scrum, GitLab, GitLab CI, Azure, Kubernetes, Angular, .NET Core 7, .NET Core 8, C#, Visual Studio, Visual Studio Code, Cursor</span>
+    </div>
+
+    <div class="experience">
+        <div class="experience-header">
+            <h3>IBM</h3>
+            <span class="experience-date">2024-09 à 2025-02</span>
+        </div>
+        <h4>DevOps Engineer</h4>
+        
+        <div class="context">Contexte Projet :</div>
+        <p>Pour le client Euroinformation, dans le cadre du Projet Move to the cloud (M2C).</p>
+        
+        <div class="realisations">Réalisations :</div>
+        <ul>
+            <li>Rédaction et pilotage du cahier des charges fonctionnel et technique, en assurant la convergence des besoins métiers et des exigences technologiques.</li>
+            <li>Collaboration étroite avec les équipes de développement logiciel pour optimiser le déploiement cloud de leurs applications.</li>
+            <li>Migration de la stack technologique vers .NET 8 pour bénéficier des dernières avancées en termes de performance, sécurité, et compatibilité avec des environnements modernes.<br>
+            <span class="highlight">Les temps de réponses des API sont améliorés et la consommation de mémoire est réduite.</span></li>
+            <li>Implémentation d'une pipeline CloudBees CI (approche Pipeline as Code), automatisant les tests et les déploiements pour réduire les délais de mise en production et assurer une qualité de code optimale.</li>
+            <li>Mise en place de tests unitaires XUnit. Une couverture de code de 85% est atteinte ce qui réduit les bugs en production.</li>
+            <li>Refonte de l'architecture applicative avec des microservices, assurant une modularité, une scalabilité et une résilience accrues des applications critiques.</li>
+            <li>Transition stratégique des applications depuis une infrastructure Webfarm vers une plateforme Cloud, exploitant les avantages du cloud pour améliorer la disponibilité, la scalabilité et réduire les coûts opérationnels.</li>
+            <li>Migration d'une dizaine d'applications hébergées sur la Webfarm vers une infrastructure cloud.</li>
+            <li>Optimisation des ressources allouées aux clusters via des études FinOps basées sur les métriques Prometheus.</li>
+            <li><span class="highlight">Mise en place d'un monitoring avancé</span> des applications via <span class="highlight">OpenShift et Dynatrace</span>, assurant une supervision en temps réel.</li>
+        </ul>
+        
+        <div class="environment">Environnement Technique :</div>
+        <span class="environment-text">Agile Scrum, GitLab, Jenkins, OpenShift, Kubernetes, .NET Core 8, ASP.NET MVC 4.7, C#, Visual Studio, Visual Studio Code, Dynatrace</span>
+    </div>
+
+    <div class="experience">
+        <div class="experience-header">
+            <h3>TRSB</h3>
+            <span class="experience-date">2024-05 à 2024-06</span>
+        </div>
+        <h4>Software Developer</h4>
+        <p>Rupture de la période d'essai suite à une embauche sur profil.</p>
+    </div>
+
+    <div class="experience">
+        <div class="experience-header">
+            <h3>Capgemini</h3>
+            <span class="experience-date">2023-04 à 2024-05</span>
+        </div>
+        <h4>Software Developer</h4>
+        
+        <div class="context">Contexte Projet :</div>
+        <p>Pour le client L'Oréal au sein de son département recherche et innovation : développement informatique au sein du produit Augmented Microbio Analysis.</p>
+        
+        <div class="realisations">Réalisations :</div>
+        <ul>
+            <li>Développement informatique back-end .NET Core, .NET MVC : Chiffrage, développement, déploiement et maintenance d'une trentaine de features backend des applications WEB.</li>
+            <li>Application des règles métiers</li>
+            <li>Développement informatique Front (Angular) : Chiffrage, développement, déploiement et maintenance du front-end.</li>
+            <li>Déploiement d'une vingtaine de features front-end.</li>
+            <li>Migration technique : Participation d'un audit sur les solutions du client + Chiffrage des solutions techniques suite à l'audit.</li>
+            <li>Mise à jour de la version d'Angular passage d'Angular 11 à Angular 16 incluant l'utilisation des standalone components et modification de l'injection de dépendances pour l'efficacité du code.<br>
+            <span class="highlight">Le chargement de page est amélioré de 15% grâce à l'optimisation du compilateur.</span></li>
+            <li>Refonte architecturale from scratch en clean architecture sous .NET Core 6, application des best practices : Clean code, Principe SOLID, clean architecture.</li>
+            <li>IAM :
+                <ul class="sub-list">
+                    <li>Gestion des profils utilisateurs.</li>
+                    <li>Déclaration et gestion de l'authentification des API sur Azure AD</li>
+                    <li>Authentification des applications en OAuth2</li>
+                    <li>Exposition sur Apigee.</li>
+                </ul>
+            </li>
+            <li>Déploiement et administration des applications sur Azure Kubernetes Service (AKS)</li>
+            <li>Mise en place d'une trentaine de tests unitaires XUnit et Karma réduisant de 30% les bugs en production.</li>
+            <li>Accompagnement fonctionnel et technique des nouveaux arrivants sur le projet.
+                <ul class="sub-list">
+                    <li>Réalisation d'un plan de knowledge transfer (KT)</li>
+                    <li>Assistance personnalisée pour les nouveaux arrivants afin de les familiariser avec les règles métiers, les exigences fonctionnelles, la stack technique et l'architecture du projet</li>
+                </ul>
+            </li>
+            <li>Support informatique : Résolution des incidents, correction des bugs et traitement des demandes de services</li>
+            <li>Rédaction de documentation technique.</li>
+        </ul>
+        
+        <div class="environment">Environnement Technique :</div>
+        <span class="environment-text">GitLab, Jenkins, Nexus, Sonar, .NET Core 6, Angular 11, Angular 16, XUnit, Entity Framework 6.0.20, ASP.NET MVC 4.7, C#, SSMS, Visual Studio, Visual Studio Code, Postman, Confluence.</span>
+        
+        <p><strong>Best practice :</strong> Clean Architecture, clean code, Principe SOLID</p>
+    </div>
+
+    <div class="experience">
+        <div class="experience-header">
+            <h3>Ubi Solutions</h3>
+            <span class="experience-date">2021-10 à 2023-04</span>
+        </div>
+        <h4>Développeur Full Stack</h4>
+        
+        <div class="context">Contexte Projet :</div>
+        <p>UBI Solutions est un éditeur de solution RFID. Projet de gestion de la traçabilité d'un parc automobile</p>
+        
+        <div class="realisations">Réalisations :</div>
+        <ul>
+            <li>Développement informatique : Optimisations d'une dizaine de plugins pour le site du client.</li>
+            <li>Développement d'une trentaine de fonctionnalités pour le site du client.</li>
+            <li>Développement d'une dizaine de features pour les applications mobiles.</li>
+            <li>Déploiement des applications sur OVH et AWS.</li>
+            <li>Support informatique : Résolution des incidents, correction des bugs et traitement des demandes de services.</li>
+            <li>Élaboration de centaines de pages de documentation sur les produits d'Ubi Solutions ainsi que les incidents et les problèmes rencontrés.</li>
+            <li>Structuration du support technique. Le temps de réponse des tickets est réduit de 40%.</li>
+        </ul>
+        
+        <div class="environment">Environnement Technique :</div>
+        <span class="environment-text">Cycle en V, Webform, WPF, Services Windows, HTML, jQuery, CSS3, C#, ASP.NET, JavaScript, SSMS, Visual Studio, Java, Netbeans, AWS, OVH</span>
+    </div>
+
+    <div class="experience">
+        <div class="experience-header">
+            <h3>Adaming</h3>
+            <span class="experience-date">2021-04 à 2021-10</span>
+        </div>
+        <h4>Ingénieur étude et développement</h4>
+        
+        <div class="context">Contexte Projet :</div>
+        <p>Pour le client Auchan, développement informatique : ERP CGI Retail Suit</p>
+        
+        <div class="realisations">Réalisations :</div>
+        <ul>
+            <li>Développement de la plateforme de connexion magasin.</li>
+            <li>Développement de la plateforme de connexion magasin en JavaScript.</li>
+            <li>Développement de l'ERP CGI Retail Suit en PL/SQL.</li>
+            <li>Automatisation, fiabilisation, optimisation et/ou rédaction de requêtes SQL et de scripts PLSQL.</li>
+            <li>Résolution de demandes de services, problèmes bloquants et non bloquants.</li>
+            <li>Élaboration de documentation sur l'ERP, les bases de données du client.</li>
+            <li>Montée en compétence du support informatique.</li>
+        </ul>
+        
+        <div class="environment">Environnement Technique :</div>
+        <span class="environment-text">Agile Scrum, CGI Retail Suit, BDD Oracle, GitLab, SQL</span>
+    </div>
+
+    <div class="section-title" style="page-break-before: always;">PROJETS PERSONNELS</div>
+
+    <div class="projet-section">
+        <div class="projet-title">Zip Zap :</div>
+        <p>Zip Zap est un projet consistant à créer une application pour le tourisme Martiniquais. L'équipe est composée de deux développeurs et d'un PO.</p>
+        
+        <div class="projet-subtitle">Déploiement d'instances EC2 (Amazon Elastic Compute Cloud) :</div>
+        <ul>
+            <li>Configuration d'un serveur Linux dans la région eu-west,</li>
+            <li>Mise en place de la connexion SSH sécurisée via paires de clés,</li>
+            <li>Installation et configuration des clients de base de données pour accéder aux ressources distantes</li>
+        </ul>
+        
+        <div class="projet-subtitle">Création d'une base de données RDS (Amazon Relational Database Service) :</div>
+        <ul>
+            <li>Déploiement d'une instance MariaDB gérée par AWS,</li>
+            <li>Configuration des paramètres de sécurité et des groupes de sécurité,</li>
+            <li>Établissement de la connexion entre l'instance EC2 et le serveur de base de données RDS.</li>
+        </ul>
+        
+        <div class="projet-subtitle">Architecture et CI/CD :</div>
+        <ul>
+            <li>Conteneurisation de l'application avec Docker pour une portabilité maximale,</li>
+            <li>Implémentation d'une architecture microservices,</li>
+            <li>Mise en place de pipelines CI/CD avec GitHub Actions pour automatiser le build, les tests et le déploiement des images Docker</li>
+        </ul>
+        
+        <div class="projet-subtitle">Développement back-end :</div>
+        <ul>
+            <li>Réalisation du back-end en microservices Nest.js.</li>
+        </ul>
+        
+        <div class="projet-subtitle">Développement front-end :</div>
+        <ul>
+            <li>Réalisation d'une librairie de composants React,</li>
+            <li>Utilisation des composants de cette librairie pour le développement du site web Zip Zap Office.</li>
+        </ul>
+        
+        <p><strong>Compétences :</strong> Amazon Web Services, AWS EC2, Amazon RDS, Linux (administration système, bash scripting), GitHub Actions, YAML, RabbitMQ, Nest.js, React, microservices, Docker.</p>
+    </div>
+
+    <div class="projet-section">
+        <div class="projet-title">Ultimate Mahjong Connect :</div>
+        <p>Ultimate Mahjong Connect est un jeu développé selon les principes de la Clean Architecture.</p>
+        
+        <div class="projet-subtitle">Architecture et développement backend :</div>
+        <ul>
+            <li>Implémentation de l'architecture Clean Architecture avec .NET Core 9,</li>
+            <li>Application du pattern MVC,</li>
+            <li>Organisation en couches distinctes (Domain, Application, Infrastructure, Presentation),</li>
+            <li>Respect des principes SOLID pour faciliter la maintenance et les tests automatisés.</li>
+        </ul>
+        
+        <div class="projet-subtitle">API et persistance des données :</div>
+        <ul>
+            <li>Exposition d'une API RESTful documentée via Swagger,</li>
+            <li>Gestion de l'authentification via cookies,</li>
+            <li>Utilisation d'Entity Framework Core pour la persistance des données.</li>
+        </ul>
+        
+        <div class="projet-subtitle">Développement frontend :</div>
+        <ul>
+            <li>Exploitation des Standalone Components d'Angular 19 éliminant la dépendance aux NgModules,</li>
+            <li>Combinaison d'Angular Material avec des composants personnalisés,</li>
+            <li>Gestion d'état assurée par des services injectables,</li>
+            <li>Communication avec le backend via HttpClient et observables RxJS.</li>
+        </ul>
+        
+        <div class="projet-subtitle">Déploiement et intégration :</div>
+        <ul>
+            <li>Conteneurisation avec Docker pour la portabilité,</li>
+            <li>Orchestration avec Kubernetes,</li>
+            <li>Pipelines CI/CD automatisés avec GitHub Actions.</li>
+        </ul>
+        
+        <p><a href="https://github.com/lucaslepouliquen/Ultimate-Mahjong-Connect">https://github.com/lucaslepouliquen/Ultimate-Mahjong-Connect</a><br>
+        <a href="https://github.com/lucaslepouliquen/Ultimate-Mahjong-Connect-Front">https://github.com/lucaslepouliquen/Ultimate-Mahjong-Connect-Front</a></p>
+        
+        <p><strong>Compétences :</strong> .NET Core 9, Architecture MVC, GitHub, Git, GitFlow, GitHub Actions, Angular 19, TypeScript, RxJS, NgRx, Angular Material, CSS, Shell, Kubernetes, Docker.</p>
+    </div>
+
+</body>
+</html>
