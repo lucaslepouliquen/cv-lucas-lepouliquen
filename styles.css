@@ -1,0 +1,183 @@
+body {
+    font-family: 'Calibri', 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.4;
+    font-size: 11pt;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #2E75B6;
+    padding-bottom: 20px;
+}
+
+.header-content {
+    flex: 1;
+    text-align: center;
+}
+
+.header-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.header-content h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.header-content h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #000;
+}
+
+.header-content p {
+    margin: 2px 0;
+    font-size: 11pt;
+}
+
+.section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #2E75B6;
+    border-bottom: 1px solid #2E75B6;
+    margin: 20px 0 10px 0;
+    padding-bottom: 2px;
+}
+
+.formation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.formation-table td {
+    padding: 3px 8px;
+    vertical-align: top;
+}
+
+.formation-table .year {
+    font-weight: bold;
+    width: 80px;
+}
+
+.competences-section {
+    margin-bottom: 15px;
+}
+
+.competences-section strong {
+    font-weight: bold;
+}
+
+.competences-section p {
+    margin: 5px 0;
+}
+
+.autres-competences ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+.autres-competences li {
+    margin: 3px 0;
+}
+
+.experience {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.experience h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.experience-date {
+    font-size: 11pt;
+    color: #000;
+}
+
+.experience h4 {
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 2px 0;
+    color: #000;
+}
+
+.context {
+    font-weight: bold;
+    margin: 8px 0 5px 0;
+}
+
+.realisations {
+    font-weight: bold;
+    margin: 8px 0 5px 0;
+}
+
+.experience ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+.experience li {
+    margin: 3px 0;
+}
+
+.sub-list {
+    padding-left: 15px;
+}
+
+.environment {
+    font-weight: bold;
+    margin: 8px 0 5px 0;
+}
+
+.environment-text {
+    font-weight: normal;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.projet-section {
+    margin-bottom: 15px;
+}
+
+.projet-title {
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.projet-subtitle {
+    font-weight: bold;
+    margin: 8px 0 3px 0;
+}
+
+@media print {
+    body {
+        font-size: 10pt;
+    }
+} 
