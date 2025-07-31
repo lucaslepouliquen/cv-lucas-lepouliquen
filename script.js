@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function calculateTotalExperience() {
         const experienceDates = document.querySelectorAll('.experience-date');
         let totalMonths = 0;
+        let experienceCount = 0;
         
-        experienceDates.forEach(dateSpan => {
+        experienceDates.forEach((dateSpan, index) => {
             const dateText = dateSpan.textContent;
+            
             // Extraire les dates au format YYYY-MM
             const dateMatch = dateText.match(/(\d{4})-(\d{2}) à (\d{4})-(\d{2})/);
             
@@ -18,12 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const endYear = parseInt(dateMatch[3]);
                 const endMonth = parseInt(dateMatch[4]);
                 
-                // Calculer la différence en mois
-                const startDate = new Date(startYear, startMonth - 1);
-                const endDate = new Date(endYear, endMonth - 1);
+                // Calculer la différence en mois (formule corrigée)
+                let monthsDiff = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
                 
-                const monthsDiff = (endYear - startYear) * 12 + (endMonth - startMonth);
+                // Si le résultat est négatif ou 0, c'est une erreur
+                if (monthsDiff <= 0) {
+                    monthsDiff = Math.abs(monthsDiff) + 1; // Ajouter 1 mois minimum
+                }
+                
                 totalMonths += monthsDiff;
+                experienceCount++;
             }
         });
         
@@ -57,7 +63,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Exécuter le calcul et mettre à jour l'affichage
     updateExperienceDisplay();
-    
-    // Afficher le résultat dans la console pour debug
-    console.log('Expérience totale calculée :', calculateTotalExperience());
 }); 
