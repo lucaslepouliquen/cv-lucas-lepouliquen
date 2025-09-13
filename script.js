@@ -49,8 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
         experienceDates.forEach((dateSpan, index) => {
             const dateText = dateSpan.textContent;
             
-            // Extraire les dates au format YYYY-MM
-            const dateMatch = dateText.match(/(\d{4})-(\d{2}) à (\d{4})-(\d{2})/);
+            // Extraire les dates au format YYYY-MM ou avec "aujourd'hui"
+            let dateMatch = dateText.match(/(\d{4})-(\d{2}) à (\d{4})-(\d{2})/);
+            let todayMatch = dateText.match(/(\d{4})-(\d{2}) à aujourd'hui/);
             
             if (dateMatch) {
                 const startYear = parseInt(dateMatch[1]);
@@ -64,6 +65,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Si le résultat est négatif ou 0, c'est une erreur
                 if (monthsDiff <= 0) {
                     monthsDiff = Math.abs(monthsDiff) + 1; // Ajouter 1 mois minimum
+                }
+                
+                totalMonths += monthsDiff;
+                experienceCount++;
+            } else if (todayMatch) {
+                const startYear = parseInt(todayMatch[1]);
+                const startMonth = parseInt(todayMatch[2]);
+                
+                // Date actuelle (juillet 2025)
+                const currentYear = 2025;
+                const currentMonth = 10; // Octobre 2025
+                
+                // Calculer la différence en mois jusqu'à aujourd'hui
+                let monthsDiff = (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
+                
+                if (monthsDiff <= 0) {
+                    monthsDiff = 1; // Au minimum 1 mois
                 }
                 
                 totalMonths += monthsDiff;
