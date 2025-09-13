@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
         experienceDates.forEach((dateSpan, index) => {
             const dateText = dateSpan.textContent;
             
-            // Extraire les dates au format YYYY-MM ou avec "aujourd'hui"
-            let dateMatch = dateText.match(/(\d{4})-(\d{2}) à (\d{4})-(\d{2})/);
-            let todayMatch = dateText.match(/(\d{4})-(\d{2}) à aujourd'hui/);
+            // Extraire les dates au format YYYY-MM ou avec "aujourd'hui"/"present"
+            let dateMatch = dateText.match(/(\d{4})-(\d{2}) (?:à|to) (\d{4})-(\d{2})/);
+            let todayMatch = dateText.match(/(\d{4})-(\d{2}) (?:à aujourd'hui|to present)/);
             
             if (dateMatch) {
                 const startYear = parseInt(dateMatch[1]);
