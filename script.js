@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const currentYear = now.getFullYear();
                 const currentMonth = now.getMonth() + 1;
                 
-                // Calculer la différence en mois jusqu'à aujourd'hui
-                let monthsDiff = (currentYear - startYear) * 12 + (currentMonth - startMonth);
+                // Calculer la différence en mois jusqu'à aujourd'hui (inclure le mois en cours)
+                let monthsDiff = (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
                 
                 if (monthsDiff <= 0) {
                     monthsDiff = 1; // Au minimum 1 mois
