@@ -34,12 +34,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Mettre à jour l'expérience totale avec la langue appropriée
-        updateExperienceDisplay();
+        updateCurrentExperiences();
     }
     
     // Ajouter l'événement click au bouton
     document.getElementById('lang-toggle').addEventListener('click', switchLanguage);
     
+    function present(startYear, startMonth, language = 'fr') {
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth() + 1; 
+        
+        // Calculer la différence en mois en incluant le mois en cours
+        let monthsDiff = (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
+        
+        if (monthsDiff <= 0) {
+            monthsDiff = 1;
+        }
+        
+        const years = Math.floor(monthsDiff / 12);
+        const months = monthsDiff % 12;
+        
+        let durationText = '';
+        if (language === 'en') {
+            if (years > 0) {
+                durationText += years + ' year' + (years > 1 ? 's' : '');
+                if (months > 0) {
+                    durationText += ' and ' + months + ' month' + (months > 1 ? 's' : '');
+                }
+            } else {
+                durationText = months + ' month' + (months > 1 ? 's' : '');
+            }
+        } else {
+            if (years > 0) {
+                durationText += years + ' an' + (years > 1 ? 's' : '');
+                if (months > 0) {
+                    durationText += ' et ' + months + ' mois';
+                }
+            } else {
+                durationText = months + ' mois';
+            }
+        }
+        
+        return durationText;
+    }
+
     // Fonction pour calculer l'expérience totale
     function calculateTotalExperience() {
         const experienceDates = document.querySelectorAll('.experience-date');
@@ -73,12 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const startYear = parseInt(todayMatch[1]);
                 const startMonth = parseInt(todayMatch[2]);
                 
-                // Date actuelle (juillet 2025)
-                const currentYear = 2025;
-                const currentMonth = 10; // Octobre 2025
+                // Utiliser la date actuelle dynamique
+                const now = new Date();
+                const currentYear = now.getFullYear();
+                const currentMonth = now.getMonth() + 1;
                 
                 // Calculer la différence en mois jusqu'à aujourd'hui
-                let monthsDiff = (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
+                let monthsDiff = (currentYear - startYear) * 12 + (currentMonth - startMonth);
                 
                 if (monthsDiff <= 0) {
                     monthsDiff = 1; // Au minimum 1 mois
@@ -128,6 +168,72 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Fonction pour mettre à jour les expériences en cours avec la fonction present
+    function updateCurrentExperiences() {
+        // Mettre à jour l'expérience Experis (commencée en août 2025)
+        const experisElement = document.getElementById('experis-duration');
+        
+        if (experisElement) {
+            const startYear = parseInt(experisElement.getAttribute('data-start-year'));
+            const startMonth = parseInt(experisElement.getAttribute('data-start-month'));
+            
+            // Utiliser la fonction present pour calculer la durée
+            const duration = present(startYear, startMonth, currentLang);
+            console.log('Durée calculée avec present():', duration, 'Langue:', currentLang);
+            
+            const frText = `${startYear}-${startMonth.toString().padStart(2, '0')} à aujourd'hui (${duration})`;
+            const enText = `${startYear}-${startMonth.toString().padStart(2, '0')} to present (${duration})`;
+            
+            experisElement.setAttribute('data-fr', frText);
+            experisElement.setAttribute('data-en', enText);
+            experisElement.textContent = currentLang === 'en' ? enText : frText;
+            
+            console.log('✅ Fonction present() utilisée ! Texte mis à jour:', experisElement.textContent);
+        } else {
+            console.log('❌ Element Experis non trouvé');
+        }
+        
+        // Mettre à jour l'expérience totale
+        updateExperienceDisplay();
+    }
+    
+    // Fonction pour mettre à jour périodiquement (chaque jour)
+    function startPeriodicUpdate() {
+        // Mettre à jour immédiatement
+        updateCurrentExperiences();
+        
+        // Puis mettre à jour chaque jour (24 heures = 86400000 ms)
+        setInterval(updateCurrentExperiences, 86400000);
+    }
+    
+    // Fonction de test pour vérifier les calculs
+    function testPresentFunction() {
+        console.log('=== Tests de la fonction present() ===');
+        
+        // Test 1: Expérience commencée en août 2025 (2025-08)
+        const testFr = present(2025, 8, 'fr');
+        const testEn = present(2025, 8, 'en');
+        console.log(`Depuis août 2025 - FR: ${testFr}, EN: ${testEn}`);
+        
+        // Test 2: Expérience commencée en janvier 2024
+        const testFr2 = present(2024, 1, 'fr');
+        const testEn2 = present(2024, 1, 'en');
+        console.log(`Depuis janvier 2024 - FR: ${testFr2}, EN: ${testEn2}`);
+        
+        // Test 3: Expérience commencée ce mois-ci
+        const now = new Date();
+        const testFr3 = present(now.getFullYear(), now.getMonth() + 1, 'fr');
+        const testEn3 = present(now.getFullYear(), now.getMonth() + 1, 'en');
+        console.log(`Depuis ce mois - FR: ${testFr3}, EN: ${testEn3}`);
+        
+        console.log('=== Fin des tests ===');
+    }
+    
+    // Exécuter les tests en mode développement (si console ouverte)
+    if (typeof console !== 'undefined') {
+        testPresentFunction();
+    }
+    
     // Exécuter le calcul et mettre à jour l'affichage
-    updateExperienceDisplay();
+    startPeriodicUpdate();
 }); 
