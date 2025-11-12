@@ -14,7 +14,27 @@ document.addEventListener('DOMContentLoaded', function() {
         translatableElements.forEach(element => {
             const translation = element.getAttribute(`data-${currentLang}`);
             if (translation) {
-                element.textContent = translation;
+                // Vérifier si l'élément contient des sous-listes
+                const hasSubList = element.querySelector('.sub-list, ul');
+                
+                if (hasSubList) {
+                    // Pour les éléments avec sous-listes, ne mettre à jour que le texte direct
+                    // en préservant les éléments enfants
+                    const childNodes = Array.from(element.childNodes);
+                    const textNodes = childNodes.filter(node => node.nodeType === Node.TEXT_NODE);
+                    const firstTextNode = textNodes[0];
+                    
+                    if (firstTextNode) {
+                        firstTextNode.textContent = translation;
+                    } else {
+                        // Si pas de nœud texte, créer un nouveau nœud texte au début
+                        const textNode = document.createTextNode(translation);
+                        element.insertBefore(textNode, element.firstChild);
+                    }
+                } else {
+                    // Pour les éléments simples, utiliser textContent comme avant
+                    element.textContent = translation;
+                }
             }
         });
         

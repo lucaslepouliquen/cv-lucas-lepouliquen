@@ -140,14 +140,33 @@ body {
 .experience ul {
     margin: 5px 0;
     padding-left: 20px;
+    list-style-type: disc;
 }
 
 .experience li {
     margin: 3px 0;
 }
 
+/* Assurer que les sous-listes sont visibles */
+.experience ul ul {
+    margin: 3px 0;
+    padding-left: 20px;
+}
+
+.experience ul ul li {
+    margin: 2px 0;
+    font-size: 10.5pt;
+}
+
 .sub-list {
-    padding-left: 15px;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.sub-list li {
+    margin: 2px 0;
+    list-style-type: disc;
 }
 
 .environment {
